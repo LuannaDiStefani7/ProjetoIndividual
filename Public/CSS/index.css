@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: black;
+    font-family: 'Poppins';
+    color: white;
+
+}
+
+/* Início - Banner 1 */
+
+#banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    border-bottom: 1px solid gray;
+
+}
+
+#banner #titulo {
+    width: 95%;
+    height: 80%;
+    margin-top: 14px;
+    margin-bottom: 14px;
+}
+
+/* Final -  Banner 1 */
+
+
+/* Início - Introdução */
+
+#introducao {
+    display: flex;
+    margin-top: 68px;
+    height: 100%;
+    color: white;
+    align-items: center;
+    margin-bottom: 100px;
+    padding: 0 2%;
+    flex-wrap: wrap;
+
+}
+
+#introducao img {
+    width: 50%;
+    margin-left: 20px;
+    cursor: pointer;
+
+}
+
+#introducao #text-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(83, 83, 83, 0.26);
+    height: 400px;
+    width: 450px;
+    padding: 30px;
+    margin-left: 50px;
+    border-radius: 30px;
+    border-top: 0.5px solid #5daeaf;
+    border-right: 0.5px solid #797fc1;
+    border-left: 0.5px solid #a9b6f0;
+    border-bottom: 0.5px solid #ad75b3;
+}
+
+#introducao p {
+    font-size: 19px;
+    margin-top: 10px;
+
+}
+
+#introducao span {
+    color: #5daeaf;
+
+}
+
+#introducao #um {
+    color: #a9b6f0;
+
+}
+
+#introducao #dois {
+    color: #b6dbb8;
+
+}
+
+#introducao #tres {
+    color: #b6a28d;
+
+}
+
+#introducao #quatro {
+    color: #797fc1;
+
+}
+
+#introducao #cinco {
+    color: #c3b674;
+
+}
+
+#introducao #seis {
+    color: #538e5e;
+
+}
+
+#introducao #sete {
+    color: #ad75b3;
+
+}
+
+#introducao video {
+    margin: auto;
+    width: 70%;
+    cursor: pointer;
+
+}
+
+/* Final - Introdução */
+
+
+/* Início - Sobre os Desenvolvedores */
+
+#text-desenvolvedores {
+    margin-top: 100px;
+    border: 1px solid #5daeaf;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10000px;
+}
+
+
+#text-desenvolvedores #titulo {
+    width: 50%;
+    margin-left: 5%;
+
+}
+
+#conteudo {
+    display: flex;
+    width: 100%;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    justify-content: space-evenly;
+
+}
+
+#conteudo #text-intro-dev {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(83, 83, 83, 0.26);
+    padding: 2%;
+    border-radius: 30px;
+    border: 1px solid #d41b347a;
+    width: 30%;
+    font-size: 17px;
+}
+
+#conteudo #text-intro-dev #logo_team {
+    width: 50%;
+    margin-bottom: 30px;
+    border-radius: 100px;
+    opacity: 0.8;
+}
+
+#conteudo #text-intro-dev #link-team-cherry {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 30px;
+
+}
+
+#conteudo #text-intro-dev #link-team-cherry #icon-team {
+    width: 45px;
+    border-radius: 180px;
+}
+
+#conteudo #text-dev-hollow {
+    background-color: rgba(83, 83, 83, 0.26);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    margin-left: 50px;
+    padding: 2%;
+    border-radius: 30px;
+    border: 1px solid #525668;
+}
+
+#conteudo #text-dev-hollow #img-zote {
+    width: 30%;
+    margin-top: 50px;
+
+}
+
+/* Final - Sobre os Desenvolvedores */
