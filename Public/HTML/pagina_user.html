@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="../JS/sessao.js"></script> 
+
+    <link rel="stylesheet" href="../CSS/menu-usuario.css">
+    <link rel="stylesheet" href="../CSS/pagina_user.css">
+    <title>Página Usuario</title>
+</head>
+<body  onload="validarSessao()">
+
+
+    <!-- Início - Menu-User -->
+
+    <div id="menu-usuario">
+
+        <div id="elementos">
+            
+            <img src="../IMG/Cornifer.png">
+    
+            <p>Voltou para a sua jornada, <br> <span id="nome_user"></span> ?</p>
+    
+            <button> <a href="pagina_user.html"> Visualizar minhas resenhas </a></button>
+            <button> <a href="criar_resenha.html"> Criar nova resenha </a></button>
+            <button id="botao-sair" onclick="limparSessao()">Sair</button>
+
+        </div>
+
+
+    </div>
+
+
+    <!--  Final - Menu User-->
+
+
+    <!-- Início Estrutura Resenhas -->
+
+    <div id="Resenhas">
+
+
+
+    </div>
+
+
+    <!-- Final Estrutura Resenhas -->
+
+    
+</body>
+</html>
+
+<script>
+    nome_user.textContent = sessionStorage.NOME_USUARIO;
+
+</script>

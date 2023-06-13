@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+
+body{
+    background-color: black;
+    display: flex;
+    font-family: 'Poppins';
+    font-size: 25px;
+    color: #fdffff;
+    
+}
+
+
+#resenha{
+   
+    display: flex;  
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    width: 100%;
+    
+}
+
+#limite{
+    display: flex;
+    flex-direction: column;
+    background-color: #21324cb6;
+    width: 60%;
+    align-items: end;
+    padding:4% 5%;
+    border-radius: 30px;
+    
+}
+
+input,textarea{
+    color: #fdffff;
+    font-size: 20px;
+
+}
+
+#titulo_div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+#titulo_div input{
+    width: 500px;
+    height: 25px;;
+    margin-left: 10px;
+    border-radius: 10px;    
+    background-color: #94848c;
+}
+
+#assunto_div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+
+#assunto_div input{
+    width: 500px;
+    height: 25px;
+    margin-left: 10px;
+    border-radius: 10px;
+    background-color: #94848c;
+
+}
+
+
+#descricao_div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#descricao_div textarea{
+    width: 500px;
+    height: 300px;
+    margin-left: 10px;
+    border-radius: 10px;
+    background-color: #94848c;
+    text-align: center;
+
+}
+
+
+#limite #botao-envio{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    width: 100%;
+
+
+}
+
+#botao-envio button{
+    background-color: #9993a086;
+    color: #fdffff;
+    text-align: center;
+    font-weight: bold;
+    height: 40px;
+    width: 100px;
+    font-size: 20px;
+    border-radius: 10px;
+
+}

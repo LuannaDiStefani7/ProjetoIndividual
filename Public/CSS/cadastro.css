@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Poppins';
+
+}
+
+#pai{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#pai #fundo-img{
+    background-image: url(../IMG/fundo_Cadastro_caminho_verde.png);
+    width: 28%;
+    border-radius: 180px;
+    margin-right: 50px;
+    padding: 1%;
+}
+
+#pai img{
+    width: 350px;
+    margin-right: 60px;
+
+}
+
+#conteudo{
+    display: flex;
+    margin-top: 10px;
+    width: 30%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color:  rgba(255, 255, 255, 0.094);
+    border-radius: 30px;
+    padding: 2%;
+    font-size: 20px;
+}
+
+#conteudo h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+
+}
+
+#conteudo input{
+    height: 35px;
+    width: 250px;
+    text-align: center;
+    font-family: 'Poppins';
+    font-style: oblique;
+    color: white;
+    background-color: black;
+    border-radius: 5px;
+    border: 2px solid rgba(255, 255, 255, 0.537);
+    font-size: 15px;
+    outline-color: #7a98b2;
+    margin-bottom: 10px;
+
+}
+
+#conteudo button {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 50px;
+    width: 50%;
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: #050c36;
+    border: 1px solid #03f7effb;
+    color:white;
+    margin-bottom: 20px;
+}

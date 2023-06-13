@@ -5,46 +5,128 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="../JS/sessao.js"></script>
+
     <link rel="stylesheet" href="../CSS/menu.css">
     <link rel="stylesheet" href="../CSS/login.css">
-    <link rel="icon" href="../IMG/logo - Copia.png">
+    <link rel="icon" href="../IMG/icon-hollow.png">
     <title>LOGIN</title>
 
 </head>
 
 <body>
 
-        
+    <!-- Início - Menu -->
+
     <nav>
 
         <a href="../index.html"><img src="../IMG/logo.png"></a>
 
-        <div >
+        <div>
 
-            <button id="botao_log"> Login </button>
-            <button id="botao_cad"> Cadastro</button>
+            <button id="botao_log"> <a href="login.html"> Login </a> </button>
+            <button id="botao_cad"> <a href="cadastro.html"> Cadastro </a></button>
 
         </div>
 
     </nav>
 
+    <!-- Final - Menu -->
+
+    <!-- Início - Login -->
+
     <div id="pai">
         <img src="../IMG/hornet-gi.gif" alt="">
-        
+
         <div id="conteudo">
-            <h2> Se <span> Logue </span> para continuar a <span> verdade</span></h2>
-            <p>Email:</p><input type="email">
-            <p>Senha:</p><input type="password">
-            <button onclick="">Login</button>
-            
+           
+            <h2> Se <span> Logue </span> para continuar busca pela<span> verdade</span></h2>
+            <p>Email:</p><input type="email" id="email_input" value="luanna@gmail.com">
+            <p>Senha:</p><input type="password" id="senha_input" value="12345678">
+            <button onclick="entrar()">Login</button>
 
         </div>
 
     </div>
 
-
-    <!-- <object data="footer.html"></object> -->
+    <!-- Final - Login -->
 
 </body>
 
 </html>
+
+<script>
+
+
+    function entrar() {
+        aguardar();
+
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+
+        if (emailVar == "" || senhaVar == "") {
+            // cardErro.style.display = "block"
+            // mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            console.log('vazio')
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                // console.log(JSON.stringify(json));    
+                resposta.json().then(json => {
+                    // console.log(JSON.stringify(json));
+                    console.log(json)
+
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+
+
+                    setTimeout(function () {
+                        window.location = "pagina_user.html";
+                    }, 200); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        // cardErro.style.display = "none"
+    }
+
+</script>

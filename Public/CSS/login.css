@@ -19,14 +19,15 @@ body {
     align-items: center;
     justify-content: center;
     margin-top: 50px;
-    background-color: #03f7effb;
+  
+  
 }
 
 #pai img {
     width: 25%;
     margin-top: 10px;
     border-radius: 180px;
-    margin-right: 40px;
+    margin-right: 50px;    
 }
 
 #conteudo {
@@ -35,9 +36,9 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 500px;
+    width: 50%;
     height: 100%;
-    border-radius: 20px;
+    border-radius:20px;
     padding: 10px;
 
 }
@@ -49,7 +50,6 @@ body {
 }
 
 #conteudo span {
-
     color: #f186f0;
 
 }
@@ -59,7 +59,6 @@ body {
     margin-top: 15px;
 
 }
-
 
 #conteudo input {
     height: 35px;
@@ -76,8 +75,6 @@ body {
 
 }
 
-
-
 #conteudo button {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -91,12 +88,3 @@ body {
     margin-bottom: 20px;
 }
 
-
-#conteudo::before {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    width: calc(100% + 30px);
-    height: calc(100% + 30px);
-
-}
