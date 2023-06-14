@@ -95,14 +95,10 @@ INSERT INTO conquistas values (null,'Afortunado','75.5%'),
                               
                               
 select * from usuario;
-delete  from usuario where idUsuario > 0;
 select * from resenha;
-
-delete from resenha where idResenha	 >= 1;	
-
-
+select * from conquistas;
 
 SELECT idResenha, titulo, assunto,resenha fkUsuario,idUsuario, nome, email,senha
         FROM Resenha  INNER JOIN usuario  ON fkUsuario  = idUsuario WHERE idUsuario = 13;
         
-drop table resenha;
+select * from conquistas where nomeConquista = 'Libertação';
