@@ -1,73 +1,78 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
 
-*{
+* {
     margin: 0px;
     padding: 0px;
 }
 
 
-body{
+body {
     background-color: black;
     display: flex;
     font-family: 'Poppins';
     font-size: 25px;
     color: #fdffff;
-    
+
 }
 
 
-#resenha{
-   
-    display: flex;  
+#resenha {
+
+    display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content:center;
+    justify-content: center;
     width: 100%;
-    
+
 }
 
-#limite{
+#limite {
     display: flex;
     flex-direction: column;
     background-color: #21324cb6;
-    width: 60%;
+    width: 65%;
     align-items: end;
-    padding:4% 5%;
+    padding: 2% 2.5%;
     border-radius: 30px;
-    
+
 }
 
-input,textarea{
+input,
+textarea {
     color: #fdffff;
     font-size: 20px;
 
 }
 
-#titulo_div{
+#titulo_div {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 30px;
+    width: 100%;
+    justify-content: end;
 }
 
-#titulo_div input{
-    width: 500px;
-    height: 25px;;
+#titulo_div input {
+    width: 415px;
+    height: 25px;
     margin-left: 10px;
-    border-radius: 10px;    
+    border-radius: 10px;
     background-color: #94848c;
 }
 
-#assunto_div{
+#assunto_div {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 30px;
+    width: 100%;
+    justify-content: end;
 }
 
 
-#assunto_div input{
-    width: 500px;
+#assunto_div input {
+    width: 415px;
     height: 25px;
     margin-left: 10px;
     border-radius: 10px;
@@ -76,24 +81,25 @@ input,textarea{
 }
 
 
-#descricao_div{
+#descricao_div {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-#descricao_div textarea{
-    width: 500px;
+#descricao_div textarea {
+    width: 415px;
     height: 300px;
     margin-left: 10px;
     border-radius: 10px;
     background-color: #94848c;
     text-align: center;
+    justify-content: end;
 
 }
 
 
-#limite #botao-envio{
+#limite #botao-envio {
     display: flex;
     justify-content: center;
     margin-top: 30px;
@@ -102,7 +108,7 @@ input,textarea{
 
 }
 
-#botao-envio button{
+#botao-envio button {
     background-color: #9993a086;
     color: #fdffff;
     text-align: center;
@@ -112,4 +118,11 @@ input,textarea{
     font-size: 20px;
     border-radius: 10px;
 
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
 }

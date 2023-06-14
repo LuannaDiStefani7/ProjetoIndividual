@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <script src="../JS/sessao.js"></script> 
+    <script src="../JS/sessao.js"></script>
 
     <link rel="stylesheet" href="../CSS/menu-usuario.css">
     <link rel="stylesheet" href="../CSS/pagina_user.css">
     <title>Página Usuario</title>
 </head>
-<body  onload="validarSessao()">
+
+<body onload="validarSessao(),atualizarFeed()">
 
 
     <!-- Início - Menu-User -->
@@ -18,11 +20,11 @@
     <div id="menu-usuario">
 
         <div id="elementos">
-            
+
             <img src="../IMG/Cornifer.png">
-    
+
             <p>Voltou para a sua jornada, <br> <span id="nome_user"></span> ?</p>
-    
+
             <button> <a href="pagina_user.html"> Visualizar minhas resenhas </a></button>
             <button> <a href="criar_resenha.html"> Criar nova resenha </a></button>
             <button id="botao-sair" onclick="limparSessao()">Sair</button>
@@ -38,8 +40,9 @@
 
     <!-- Início Estrutura Resenhas -->
 
-    <div id="Resenhas">
+    <div id="feed">
 
+        <span id="vazio"></span>
 
 
     </div>
@@ -47,11 +50,107 @@
 
     <!-- Final Estrutura Resenhas -->
 
-    
+
 </body>
+
 </html>
 
 <script>
     nome_user.textContent = sessionStorage.NOME_USUARIO;
+    idUsuario = sessionStorage.ID_USUARIO;
+    var resenha_existe = 0;
+    function atualizarFeed() {
+        fetch(`/avisos/listar/${idUsuario}`).then(function (resposta) {
+            if (resposta.ok) {
+                if (resposta.status == 204) {
+
+                    vazio.textContent = "Nenhum resultado encontrado."
+                    throw "Nenhum resultado encontrado!!";
+                }
+
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+
+                    var feedConteud = document.getElementById("feed_container");
+                    feed.innerHTML = "";
+                    for (let i = 0; i < resposta.length; i++) {
+                        var publicacao = resposta[i];
+                        // criando e manipulando elementos do HTML via JavaScript
+
+                        if (publicacao.exibir == 't') {
+
+                            var geral = document.createElement("div");
+                            var div_titulo = document.createElement("div");
+                            var div_assunto = document.createElement("div");
+                            var div_resenha = document.createElement("div");
+                            var div_botao = document.createElement("div")
+
+                            // var btnEditar = document.createElement("button");
+                            var btnDeletar = document.createElement("button");
+
+                            div_titulo.innerHTML = " <span> Título: </span> " + publicacao.titulo + "</b>";
+                            div_assunto.innerHTML = "<span> Assunto: </span>" + publicacao.assunto + "</b>";
+                            div_resenha.innerHTML = "<span> Resenha: </span>" + publicacao.resenha + "</b>";
+
+                            geral.className = "publicacao";
+                            div_titulo.id = "titulo" + publicacao.idResenha;
+                            div_assunto.id = "texto" + publicacao.idResenha;
+                            div_resenha.id = "resenha" + publicacao.idResenha;
+                            div_botao.id = "botao" + publicacao.idResenha;
+
+                            // btnEditar.className = "publicacao-btn-editar"
+                            // btnEditar.id = "btnEditar" + publicacao.idResenha;
+                            // btnEditar.innerHTML = "Editar";
+                            // btnEditar.setAttribute("onclick", `editar(${publicacao.idResenha})`);
+
+                            btnDeletar.className = "publicacao-btn-editar"
+                            btnDeletar.id = "btnDeletar" + publicacao.idResenha;
+                            btnDeletar.innerHTML = "Deletar";
+                            btnDeletar.setAttribute("onclick", `deletar(${publicacao.idResenha})`);
+
+                            feed.appendChild(geral);
+                            geral.appendChild(div_titulo);
+                            geral.appendChild(div_assunto);
+                            geral.appendChild(div_resenha);
+                            geral.appendChild(div_botao);
+                            // div_botao.appendChild(btnEditar);
+                            div_botao.appendChild(btnDeletar);
+
+
+                        }
+                    }
+
+                    finalizarAguardar();
+                });
+            } else {
+                throw ('Houve um erro na API!');
+            }
+        }).catch(function (resposta) {
+            console.error(resposta);
+            finalizarAguardar();
+        });
+    }
+
+
+    function deletar(idResenha) {
+        fetch(`/avisos/deletar/${idResenha}`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then(function (resposta) {
+
+            if (resposta.ok) {
+                window.alert("Post deletado com sucesso pelo usuario de email: " + sessionStorage.getItem("EMAIL_USUARIO") + "!");
+                window.location = "pagina_user.html"
+            } else if (resposta.status == 404) {
+                window.alert("Deu 404!");
+            } else {
+                throw ("Houve um erro ao tentar realizar a postagem! Código da resposta: " + resposta.status);
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+    }
 
 </script>

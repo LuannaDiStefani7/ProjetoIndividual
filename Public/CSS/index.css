@@ -132,11 +132,10 @@ body {
 
 #text-desenvolvedores {
     margin-top: 100px;
-    border: 1px solid #5daeaf;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 10000px;
+    margin-bottom: 50px;
 }
 
 
@@ -208,3 +207,28 @@ body {
 }
 
 /* Final - Sobre os Desenvolvedores */
+
+/* Início - Conquistas */
+
+#conquistas_div{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+
+
+}
+
+#conquistas_div #titulo_conquista{ 
+    width: 40%;
+    margin-bottom: 90px;
+    
+
+}
+
+canvas {
+    width: 90% !important;
+    height: 100% !important;
+}
+
+/* Final -Conquistas */

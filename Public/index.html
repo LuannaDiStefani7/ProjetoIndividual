@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
     <link rel="stylesheet" href="CSS/menu.css">
     <link rel="stylesheet" href="CSS/index.css">
     <link rel="icon" href="IMG/icon-hollow.png">
@@ -21,7 +24,7 @@
         <a href="../index.html"><img src="IMG/logo.png"></a>
 
         <div>
-
+            <a href="HTML/pagina_resenha.html"> Resenhas </a>
             <button id="botao_log"> <a href="HTML/login.html"> Login </a> </button>
             <button id="botao_cad"> <a href="HTML/cadastro.html"> Cadastro</a></button>
 
@@ -117,8 +120,82 @@
 
     <!-- Final - Sobre os desenvolvedores -->
 
+    <!-- Início - Conquistas -->
 
+    <div id="conquistas_div">
+
+        <img src="IMG/conquistas.png" id="titulo_conquista">
+
+        <div id="mosaico">
+
+            <div id="conquista_1">
+
+                <img>
+                <p></p>
+                <p></p>
+
+            </div>
+
+            <div id="conquista_2">
+
+                <img>
+                <p></p>
+                <p></p>
+
+            </div>
+            <div id="conquista_3">
+
+                <img>
+                <p></p>
+                <p></p>
+
+            </div>
+            <div id="conquista_4">
+
+                <img>
+                <p></p>
+                <p></p>
+
+            </div>
+            <div id="conquista_5">
+
+                <img>
+                <p></p>
+                <p></p>
+
+            </div>
+
+        </div>
+        <canvas id="myChart"></canvas>
+
+    </div>
+
+    <!-- Final - Conquistas -->
 
 </body>
 
 </html>
+
+<script>
+    const ctx = document.getElementById('myChart');
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            datasets: [{
+                label: '# of Votes',
+                data: [12, 19, 3, 5, 2, 3],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            indexAxis: 'y',
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
