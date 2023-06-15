@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="../JS/sessao.js"></script>
+
+    <link rel="stylesheet" href="../CSS/menu.css">
+    <link rel="stylesheet" href="../CSS/pagina_resenha.css">
+    <link rel="icon" href="../IMG/icon-hollow.png">
+    <title>Resenhas</title>
+</head>
+
+<body onload="atualizarFeed()">
+    <!-- Início - Menu -->
+
+    <nav>
+
+        <a href="../index.html"><img src="../IMG/logo.png"></a>
+
+        <div>
+
+            <a href="pagina_resenha.html"> Resenhas </a>
+            <button id="botao_log"> <a href="login.html"> Login </a> </button>
+            <button id="botao_cad"> <a href="cadastro.html"> Cadastro </a></button>
+
+        </div>
+
+    </nav>
+
+    <!-- Final - Menu -->
+
+    <!-- Início - Página Resenhas -->
+
+    <div id="feed">
+
+        <span id="vazio"></span>
+
+
+    </div>
+
+    <!-- Final - Página Resenhas -->
+
+</body>
+
+</html>
+<script>
+
+    function atualizarFeed() {
+        fetch("/avisos/listar").then(function (resposta) {
+            if (resposta.ok) {
+                if (resposta.status == 204) {
+
+                    vazio.textContent = "Nenhum resultado encontrado."
+                    throw "Nenhum resultado encontrado!!";
+                }
+
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+
+                    var feedConteud = document.getElementById("feed_container");
+                    feed.innerHTML = "";
+                    for (let i = 0; i < resposta.length; i++) {
+                        var publicacao = resposta[i];
+                        // criando e manipulando elementos do HTML via JavaScript
+
+                        if (publicacao.exibir == 't') {
+
+                            var geral = document.createElement("div");
+                            var div_titulo = document.createElement("div");
+                            var div_assunto = document.createElement("div");
+                            var div_resenha = document.createElement("div");
+                            var div_botao = document.createElement("div")
+
+                            div_titulo.innerHTML = " <span> Título: </span> " + publicacao.titulo + "</b>";
+                            div_assunto.innerHTML = "<span> Assunto: </span>" + publicacao.assunto + "</b>";
+                            div_resenha.innerHTML = "<span> Resenha: </span>" + publicacao.resenha + "</b>";
+
+                            geral.className = "publicacao";
+                            div_titulo.id = "titulo" + publicacao.idResenha;
+                            div_assunto.id = "texto" + publicacao.idResenha;
+                            div_resenha.id = "resenha" + publicacao.idResenha;
+
+
+                            feed.appendChild(geral);
+                            geral.appendChild(div_titulo);
+                            geral.appendChild(div_assunto);
+                            geral.appendChild(div_resenha);
+
+                        }
+                    }
+
+                    finalizarAguardar();
+                });
+            } else {
+                throw ('Houve um erro na API!');
+            }
+        }).catch(function (resposta) {
+            console.error(resposta);
+            finalizarAguardar();
+        });
+    }
+
+
+</script>

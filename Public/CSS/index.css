@@ -151,6 +151,7 @@ body {
     margin-bottom: 50px;
     margin-top: 50px;
     justify-content: space-evenly;
+    
 
 }
 
@@ -215,6 +216,7 @@ body {
     flex-direction: column;
     width: 100%;
     align-items: center;
+    height: 100%;
 
 
 }
@@ -226,9 +228,40 @@ body {
 
 }
 
+#mosaico{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 2% 0;
+}
+
 #conquistas_div #mosaico{
     display: flex;
 
+}
+
+#mosaico #conquista_1,#conquista_2,#conquista_3,#conquista_4, #conquista_5 {
+    width: 18%;
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    
+
+}
+
+#mosaico img{
+    width: 80px;
+
+
+}
+
+#grafico{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
 
 }
 
