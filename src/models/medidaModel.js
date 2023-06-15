@@ -14,7 +14,7 @@ function buscarUltimasMedidas(limite_linhas) {
                     where fk_aquario = ${idAquario}
                     order by id desc`;
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
-        
+        console.log('aqui')
         instrucaoSql = `select * from conquistas;`;
     } else {
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");

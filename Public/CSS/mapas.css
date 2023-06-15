@@ -1,0 +1,50 @@
+/* Mapas - dirtmouht - encruzilhada - caminho - arquivo - index.css */
+
+#penhasco{
+    display: flex;
+    width: 90%;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-bottom: 0px;
+}
+
+
+#penhasco{
+    width: 45%;
+    height: 100%;
+    
+}
+
+#penhasco img{
+    width: 100%;
+
+
+}
+
+#imagem-penhasco p{
+    margin-top: 15px;
+
+
+}
+
+#text-penhasco{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(29, 28, 28);
+    border: 1px solid #1a695f;
+    width: 46%;
+    font-size: 20px;
+    border-radius: 30px;
+    padding: 1% 2%;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#text-penhasco img{
+    width: 60%; 
+    margin-top: 10px;
+
+}

@@ -69,22 +69,25 @@
                         if (publicacao.exibir == 't') {
 
                             var geral = document.createElement("div");
+                            var div_autor = document.createElement("div");
                             var div_titulo = document.createElement("div");
                             var div_assunto = document.createElement("div");
                             var div_resenha = document.createElement("div");
-                            var div_botao = document.createElement("div")
 
-                            div_titulo.innerHTML = " <span> Título: </span> " + publicacao.titulo + "</b>";
-                            div_assunto.innerHTML = "<span> Assunto: </span>" + publicacao.assunto + "</b>";
-                            div_resenha.innerHTML = "<span> Resenha: </span>" + publicacao.resenha + "</b>";
+                            div_autor.innerHTML = "<span id='autor'> Autor: </span>" + publicacao.nome;
+                            div_titulo.innerHTML = " <span> Título: </span> " + publicacao.titulo;
+                            div_assunto.innerHTML = "<span> Assunto: </span>" + publicacao.assunto;
+                            div_resenha.innerHTML = "<span> Resenha: </span>" + publicacao.resenha;
 
                             geral.className = "publicacao";
+                            div_autor.id = "autor" + publicacao.idResenha;
                             div_titulo.id = "titulo" + publicacao.idResenha;
                             div_assunto.id = "texto" + publicacao.idResenha;
                             div_resenha.id = "resenha" + publicacao.idResenha;
 
 
                             feed.appendChild(geral);
+                            geral.appendChild(div_autor);
                             geral.appendChild(div_titulo);
                             geral.appendChild(div_assunto);
                             geral.appendChild(div_resenha);

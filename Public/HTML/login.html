@@ -41,10 +41,10 @@
         <img src="../IMG/hornet-gi.gif" alt="">
 
         <div id="conteudo">
-           
+
             <h2> Se <span> Logue </span> para continuar busca pela<span> verdade</span></h2>
-            <p>Email:</p><input type="email" id="email_input" value="luanna@gmail.com">
-            <p>Senha:</p><input type="password" id="senha_input" value="12345678">
+            <p>Email:</p><input type="email" id="email_input" value="kevyn123@gmail.com">
+            <p>Senha:</p><input type="password" id="senha_input" value="123456">
             <button onclick="entrar()">Login</button>
 
         </div>
@@ -62,18 +62,29 @@
 
     function entrar() {
         aguardar();
-
+        var erro = 0
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
 
-        if (emailVar == "" || senhaVar == "") {
-            // cardErro.style.display = "block"
-            // mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
-            console.log('vazio')
+        if (emailVar == "") {
+
+            alert("É necessario informar o email para logar");
+            erro++;
+
+        }
+
+        if (senhaVar == "") {
+            alert("É necessario informar a senha para logar");
+            erro++;
+        }
+
+        if(erro > 0){
+
+            erro = 0;
             finalizarAguardar();
             return false;
-        }
-        else {
+
+        }else {
             setInterval(sumirMensagem, 5000)
         }
 

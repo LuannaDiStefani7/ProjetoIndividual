@@ -100,8 +100,4 @@ select * from conquistas;
 SELECT idResenha, titulo, assunto,resenha fkUsuario,idUsuario, nome, email,senha
         FROM Resenha  INNER JOIN usuario  ON fkUsuario  = idUsuario WHERE idUsuario = 13;
         
-select * from conquistas where nomeConquista = 'Libertação';
-
-select * from conquistas;
-
 select * from Resenha LEFT JOIN Usuario on idUsuario = fkUsuario;	

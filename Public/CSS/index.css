@@ -271,3 +271,184 @@ canvas {
 }
 
 /* Final -Conquistas */
+
+/* Início - Mapas */
+
+
+#mapas{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    margin-top: 5%;
+}    
+
+
+#mapas #titulo-maps{
+    width: 50%;
+    margin-bottom: 50px;
+
+}
+
+/* Início - MAPA - Dirtmouth */
+
+
+#dirtmouth{
+    display: flex;
+    width: 90%;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-bottom: 100px;
+}
+
+
+#imagem-dirtmouth{
+    width: 45%;
+    height: 100%;
+    
+}
+
+#imagem-dirtmouth img{
+    width: 100%;
+
+
+}
+
+#imagem-dirtmouth p{
+    margin-top: 15px;
+
+
+}
+
+#text-dirtmouth{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(29, 28, 28);
+    border: 1px solid #566ca0;
+    width: 46%;
+    font-size: 20px;
+    border-radius: 30px;
+    padding: 1% 2%;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#text-dirtmouth img{
+    width: 60%; 
+    margin-top: 10px;
+
+}
+
+/* Final - MAPA - Dirtmouth */
+
+/* Início - MAPA - Encruzilhada */
+
+#encruzilhada{
+    display: flex;
+    width: 90%;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-bottom: 100px;
+}
+
+
+#imagem-encruzilhada{
+    width: 45%;
+    height: 100%;
+    
+}
+
+#imagem-encruzilhada img{
+    width: 100%;
+
+
+}
+
+#imagem-encruzilhada p{
+    margin-top: 15px;
+
+
+}
+
+#text-encruzilhada{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(29, 28, 28);
+    border: 1px solid #78a2b4;
+    width: 46%;
+    font-size: 20px;
+    border-radius: 30px;
+    padding: 1% 2%;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#text-encruzilhada img{
+    width: 60%; 
+    margin-top: 10px;
+
+}
+
+/* Final - MAPA - Encruzilhada */
+
+/* Início - MAPA - Caminho */
+
+#caminho{
+    display: flex;
+    width: 90%;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-bottom: 50px;
+}
+
+
+#imagem-caminho{
+    width: 45%;
+    height: 100%;
+    
+}
+
+#imagem-caminho img{
+    width: 100%;
+
+
+}
+
+#imagem-caminho p{
+    margin-top: 15px;
+
+
+}
+
+#text-caminho{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(29, 28, 28);
+    border: 1px solid #1a695f;
+    width: 46%;
+    font-size: 20px;
+    border-radius: 30px;
+    padding: 1% 2%;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#text-caminho img{
+    width: 60%; 
+    margin-top: 10px;
+
+}
+
+/* Final - MAPA - Caminho */
+
+/* continuação - mapas - arquivo - mapas.css */
